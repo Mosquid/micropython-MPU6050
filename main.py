@@ -31,7 +31,7 @@ def calculate_roll(x, z):
 i2c = I2C(1, scl=scl, sda=sda, freq=400000)  # Adjust pins as necessary
 
 # Initialize MPU6050
-i2c.writeto_mem(MPU6050_ADDR, MPU6050_ADDR, b'\x00')  # Wake up sensor
+i2c.writeto_mem(MPU6050_ADDR, 0x6B, b'\x00')  # Wake up sensor
 
 def get_roll_percentage(roll):
     max = led_degree * 2
